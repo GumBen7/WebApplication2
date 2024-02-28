@@ -1,0 +1,8 @@
+﻿@using WebApplication1.ViewModels
+@model HomeViewModel
+<div>
+    <h1>Это Index</h1>
+    @foreach(var item in Model.Dates) {
+        <p>@item</p>
+    }
+</div>

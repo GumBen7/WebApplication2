@@ -1,0 +1,9 @@
+﻿@using WebApplication1.ViewModels
+@model CatsViewModel
+<div>
+    <h1>Это Cats</h1>
+    @foreach (var item in Model.Cats) {
+        <p>@item.Name</p>
+        <p>@item.Age</p>
+    }
+</div>

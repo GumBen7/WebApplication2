@@ -1,0 +1,27 @@
+﻿@using WebApplication1.ViewModels
+@model AddingViewModel
+<div>
+    <h1>Добавить питомца</h1>
+    <form asp-action="Index" method="post">
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age">Age:</label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PetType">Pet Type:</label>
+            <select asp-for="PetType" class="form-control">
+                @foreach (var type in Enum.GetValues(typeof(WebApplication1.Models.PetTypes))) {
+                    <option value="@type">@type</option>
+                }
+            </select>
+            <span asp-validation-for="PetType" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Pet</button>
+    </form>
+</div>
